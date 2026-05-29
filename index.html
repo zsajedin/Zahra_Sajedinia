@@ -1,87 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zahra Sajedinia | Faculty Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahra Sajedinia | Responsible AI and Data Science Lab</title>
+  <meta name="description" content="Faculty and lab website for Zahra Sajedinia: Responsible AI, Bayesian modeling, human-AI interaction, multi-agent negotiation, astrocyte-inspired neural networks, and data science education." />
 
   <style>
+    :root {
+      --dark: #172033;
+      --dark2: #243047;
+      --accent: #4f46e5;
+      --accent2: #0f766e;
+      --soft: #f5f7fb;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --border: #e5e7eb;
+      --gold: #b7791f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 0;
-      color: #222;
-      background-color: #fafafa;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--soft);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     header {
-      background-color: #1f2937;
-      color: white;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--dark), var(--dark2));
+      color: var(--white);
+      padding: 58px 22px 44px;
       text-align: center;
     }
 
     header h1 {
-      margin-bottom: 5px;
-      font-size: 2.2em;
+      font-size: 2.65rem;
+      margin: 0 0 8px;
+      letter-spacing: 0.3px;
     }
 
-    header p {
-      margin: 5px 0;
-      font-size: 1.1em;
+    header h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 400;
+      color: #d9e2f2;
+    }
+
+    .tagline {
+      max-width: 920px;
+      margin: 20px auto 0;
+      font-size: 1.05rem;
+      color: #eef2ff;
+    }
+
+    .hero-buttons {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.22);
+      text-decoration: none;
     }
 
     nav {
-      background-color: #374151;
-      padding: 10px;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      color: var(--dark);
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
     main {
-      max-width: 950px;
-      margin: 30px auto;
+      max-width: 1100px;
+      margin: 34px auto;
       padding: 0 20px;
     }
 
     section {
-      background: white;
-      margin-bottom: 25px;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: var(--white);
+      margin-bottom: 28px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.055);
+      border: 1px solid #edf0f6;
     }
 
     h2 {
-      color: #1f2937;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 8px;
+      font-size: 1.75rem;
+      margin: 0 0 14px;
+      color: var(--dark);
+      border-bottom: 3px solid #eef2ff;
+      padding-bottom: 10px;
     }
 
-    .news-item, .paper-item, .person-item {
-      margin-bottom: 15px;
+    h3 {
+      color: var(--dark2);
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: #ffffff;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      color: var(--accent2);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      background: #eef2ff;
+      color: #3730a3;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .people-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+
+    .people-buttons a {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: #f9fafb;
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .people-buttons a:hover {
+      background: #eef2ff;
+      text-decoration: none;
+    }
+
+    .person {
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      margin: 12px 0;
+      background: #fbfcff;
+      border-radius: 8px;
+    }
+
+    .person strong {
+      color: var(--dark);
+    }
+
+    .news-item {
+      border-left: 4px solid var(--gold);
+      padding: 12px 14px;
+      margin: 12px 0;
+      background: #fffaf0;
+      border-radius: 8px;
+    }
+
+    .paper {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .paper:last-child {
+      border-bottom: none;
+    }
+
+    .paper strong {
+      color: var(--dark);
+    }
+
+    .placeholder {
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 12px;
+      color: var(--muted);
     }
 
     footer {
-      text-align: center;
-      padding: 25px;
-      background-color: #1f2937;
+      background: var(--dark);
       color: white;
+      text-align: center;
+      padding: 28px 20px;
       margin-top: 40px;
     }
 
-    a {
-      color: #2563eb;
+    footer a {
+      color: #c7d2fe;
+    }
+
+    @media (max-width: 850px) {
+      .two-column, .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 2.1rem;
+      }
+
+      section {
+        padding: 22px;
+      }
     }
   </style>
 </head>
@@ -90,108 +295,215 @@
 
 <header>
   <h1>Zahra Sajedinia</h1>
-  <p>Assistant Professor of Data Science and Computer Science</p>
+  <h2>Assistant Professor of Data Science and Computer Science</h2>
   <p>Saint Mary’s College of California</p>
-  <p>Responsible AI • Bayesian Modeling • Human–AI Interaction • Data Science Education</p>
+  <p class="tagline">
+    Responsible AI and Data Science Lab | Human–AI Interaction | LLM Bias and Transparency |
+    Bayesian Modeling | Multi-Agent Negotiation | Astrocyte-Inspired Neural Networks
+  </p>
+
+  <div class="hero-buttons">
+    <a class="btn" href="#research">Research</a>
+    <a class="btn" href="#people">Lab Members</a>
+    <a class="btn" href="#publications">Publications</a>
+    <a class="btn" href="#join">Join the Lab</a>
+    <a class="btn" href="https://www.linkedin.com/in/zahra-sajedinia-47764923" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#people">People</a>
-  <a href="#publications">Publications</a>
-  <a href="#news">News</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#join">Join Us</a>
-  <a href="#contact">Contact</a>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#people">People</a>
+    <a href="#publications">Publications</a>
+    <a href="#news">News</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#personal">Personal</a>
+    <a href="#join">Join Us</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <main>
 
 <section id="about">
   <h2>About</h2>
-  <p>
-    I am an Assistant Professor of Data Science and Computer Science at Saint Mary’s College of California.
-    My research focuses on responsible artificial intelligence, human–AI interaction, Bayesian modeling,
-    cognitive modeling, and the role of AI in education and decision-making.
-  </p>
+  <div class="two-column">
+    <div>
+      <p>
+        I am an Assistant Professor of Data Science and Computer Science at Saint Mary’s College of California.
+        My work brings together responsible artificial intelligence, human–AI interaction, Bayesian modeling,
+        cognitive and computational modeling, and data science education.
+      </p>
 
-  <p>
-    My current work investigates how users interpret AI-generated outputs, how bias in large language models
-    can be measured, and how transparency tools can support more informed human–AI interaction.
-  </p>
+      <p>
+        My research asks how people interpret, trust, and use AI-generated information, especially when that
+        information may contain bias, uncertainty, or social consequences. I am particularly interested in building
+        transparent, human-centered AI systems that support better judgment rather than replacing human thinking.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Research Identity</h3>
+      <div class="pill-row">
+        <span class="pill">Responsible AI</span>
+        <span class="pill">LLM Bias</span>
+        <span class="pill">Bayesian Models</span>
+        <span class="pill">Human–AI Interaction</span>
+        <span class="pill">Multi-Agent Systems</span>
+        <span class="pill">Astrocyte-Inspired AI</span>
+        <span class="pill">Data Science Education</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="research">
   <h2>Research</h2>
 
-  <h3>Responsible AI and LLM Bias</h3>
-  <p>
-    We study how bias appears in large language model outputs and how users respond when bias information
-    is presented at the point of use. This work combines behavioral experiments, statistical modeling,
-    and responsible AI design.
-  </p>
+  <div class="card-grid">
+    <div class="card">
+      <h3>LLM Bias and Transparency</h3>
+      <p>
+        We study how bias appears in large language model outputs and how users respond when bias information
+        is displayed at the point of interaction. This work connects responsible AI, interface design, behavioral
+        experiments, and mixed-effects statistical modeling.
+      </p>
+    </div>
 
-  <h3>Bayesian Bias Aggregation</h3>
-  <p>
-    We develop Bayesian methods for combining bias ratings from multiple large language models and human
-    evaluators. The goal is to produce bias scores with uncertainty estimates rather than relying on a
-    single deterministic label.
-  </p>
+    <div class="card">
+      <h3>Bayesian Bias Aggregation</h3>
+      <p>
+        We develop Bayesian frameworks for combining bias ratings from multiple AI systems and human evaluators.
+        The goal is to move beyond a single bias score and instead quantify both estimated bias and uncertainty.
+      </p>
+    </div>
 
-  <h3>AI in Data Science Education</h3>
-  <p>
-    We explore how AI tools can support student learning in statistics, data analysis, and programming,
-    while maintaining active learning, critical thinking, and academic integrity.
-  </p>
+    <div class="card">
+      <h3>Human–AI Trust and Decision-Making</h3>
+      <p>
+        Our work examines when transparency helps users make better judgments, when it may increase over-reliance,
+        and how interface cues shape trust, confidence, and intended use of AI-generated content.
+      </p>
+    </div>
 
-  <h3>Cognitive and Agent-Based Modeling</h3>
-  <p>
-    This research area focuses on modeling human behavior, personality, trust, learning, and interaction
-    using computational and statistical models.
-  </p>
+    <div class="card">
+      <h3>Multi-Agent Negotiation Modeling</h3>
+      <p>
+        This research explores computational models of negotiation, interaction, and consensus among multiple agents.
+        The work is connected to decision-making, personality, trust, and human-like behavior in complex systems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Astrocyte-Inspired Neural Networks</h3>
+      <p>
+        We investigate how ideas inspired by astrocytes and brain dynamics can inform new neural network architectures,
+        including slower modulatory processes, stabilization mechanisms, and biologically inspired learning.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>AI in Data Science Education</h3>
+      <p>
+        We design and evaluate AI-supported learning tools for statistics, programming, and data analytics, with a focus
+        on responsible use, student agency, and meaningful learning rather than simple answer generation.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section id="people">
   <h2>People</h2>
 
-  <div class="person-item">
-    <strong>Zahra Sajedinia</strong><br>
-    Principal Investigator<br>
-    Assistant Professor, Saint Mary’s College of California
+  <p>
+    Our lab includes doctoral students, undergraduate and graduate research assistants, collaborators, and alumni working
+    on responsible AI, data science, computational modeling, and human-centered technology.
+  </p>
+
+  <div class="people-buttons">
+    <a href="#doctoral-students">Doctoral Students</a>
+    <a href="#current-ras">Current Research Assistants</a>
+    <a href="#past-ras">Past Research Assistants</a>
+    <a href="#collaborators">Collaborators and Coauthors</a>
   </div>
 
-  <div class="person-item">
-    <strong>Student Research Assistants</strong><br>
-    Coming soon.
+  <h3 id="doctoral-students">Doctoral Students</h3>
+  <div class="person">
+    <strong>Aurora Velez</strong><br>
+    Doctoral Student<br>
+    <span class="muted">Research interests include AI adoption, organizational behavior, agent-based modeling, and human–AI collaboration.</span>
   </div>
 
-  <div class="person-item">
-    <strong>Collaborators</strong><br>
-    Coming soon.
+  <h3 id="current-ras">Current Research Assistants</h3>
+  <div class="placeholder">
+    Add current research assistant names here. Suggested format:
+    <br><br>
+    <strong>Student Name</strong> — Research Assistant<br>
+    Short description of project, role, or interest.
+  </div>
+
+  <h3 id="past-ras">Past Research Assistants</h3>
+  <div class="person">
+    <strong>Anahita Ghafari</strong><br>
+    Past Research Assistant
+  </div>
+
+  <div class="person">
+    <strong>Ayushi Singhal</strong><br>
+    Past Research Assistant
+  </div>
+
+  <div class="person">
+    <strong>Manaswini Mishra</strong><br>
+    Past Research Assistant
+  </div>
+
+  <h3 id="collaborators">Collaborators and Coauthors</h3>
+  <p class="muted">
+    This section includes collaborators and student coauthors from current and recent research projects.
+    You can later add photos, links, titles, or short bios for each person.
+  </p>
+
+  <div class="card-grid">
+    <div class="card"><h3>Nahid Aalam</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Mina Pournabimavaneh</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Sayan Patra</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Harsh Singh</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Simran Bains</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Armin Niakan</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Nadim Armanios</h3><p>Coauthor / Research collaborator</p></div>
+    <div class="card"><h3>Nathaniel Isaeff</h3><p>Coauthor / Research collaborator</p></div>
   </div>
 </section>
 
 <section id="publications">
   <h2>Publications and Working Papers</h2>
 
-  <div class="paper-item">
-    <strong>Does Knowing the Bias Score Matter?</strong><br>
-    Working paper / under review.<br>
-    This project studies whether displaying bias labels beside AI-generated responses affects trust,
-    confidence, and intended use.
+  <div class="paper">
+    <strong>When AI Signals its Bias: Effects of Response-Level Bias Transparency on Trust, Confidence, and Intended Use</strong><br>
+    Zahra Sajedinia, Nahid Aalam, Mina Pournabimavaneh, Sayan Patra, Harsh Singh, Simran Bains,
+    Armin Niakan, Nadim Armanios, and Nathaniel Isaeff.<br>
+    <span class="muted">Working paper / under review.</span>
   </div>
 
-  <div class="paper-item">
-    <strong>Can Large Language Models Measure Linguistic Bias?</strong><br>
-    Working paper.<br>
-    This project proposes a Bayesian aggregation framework for combining multi-LLM bias ratings with
-    uncertainty quantification.
+  <div class="paper">
+    <strong>Can Large Language Models Measure Linguistic Bias? Bayesian Aggregation of Multi-LLM Ratings with Uncertainty Quantification</strong><br>
+    <span class="muted">Working paper in development.</span><br>
+    This project develops a Bayesian framework for aggregating multiple LLM-based bias ratings while representing uncertainty.
   </div>
 
-  <div class="paper-item">
-    <strong>Additional publications</strong><br>
-    Coming soon.
+  <div class="paper">
+    <strong>Astrocyte-Inspired Neural Networks and Modulatory AI Architectures</strong><br>
+    <span class="muted">Research project in development.</span><br>
+    This project explores biologically inspired mechanisms for neural networks based on astrocyte-like modulation and slower dynamic processes.
+  </div>
+
+  <div class="paper">
+    <strong>Multi-Agent Negotiation and Human-Like Interaction Modeling</strong><br>
+    <span class="muted">Research stream.</span><br>
+    This work studies computational models of negotiation, consensus, personality, and interaction among multiple agents.
   </div>
 </section>
 
@@ -199,17 +511,26 @@
   <h2>News</h2>
 
   <div class="news-item">
-    <strong>May 2026:</strong> Our work on bias transparency in human–AI interaction is being prepared
-    for journal submission.
+    <strong>Student research spotlight:</strong>
+    Saint Mary’s College featured student work on machine learning programs in the story
+    <a href="https://www.stmarys-ca.edu/news/brain-blast-how-spending-summer-building-machine-learning-programs-put-these-students-leading" target="_blank" rel="noopener">
+      “Brain Blast: How Spending the Summer Building Machine Learning Programs Put These Students in the Lead.”
+    </a>
   </div>
 
   <div class="news-item">
-    <strong>Spring 2026:</strong> New research projects are underway on responsible AI, LLM bias,
-    and AI-supported data science education.
+    <strong>Current project:</strong>
+    Our lab is studying how response-level bias labels influence trust, confidence, and intended use of AI-generated content.
   </div>
 
   <div class="news-item">
-    <strong>Coming soon:</strong> Student research updates, conference presentations, and lab announcements.
+    <strong>Current project:</strong>
+    We are developing Bayesian models for aggregating bias ratings from multiple large language models and human evaluators.
+  </div>
+
+  <div class="news-item">
+    <strong>Coming soon:</strong>
+    Add conference presentations, student awards, poster sessions, grant announcements, publications, and lab updates here.
   </div>
 </section>
 
@@ -217,52 +538,96 @@
   <h2>Teaching</h2>
 
   <p>
-    I teach courses in statistics, experimental design, data analysis, programming, and business analytics.
-    My teaching emphasizes applied learning, statistical reasoning, responsible use of AI tools, and clear
-    communication of data-driven results.
+    I teach courses in data science, statistics, experimental design, data analytics, programming, and business analytics.
+    My teaching emphasizes applied learning, statistical reasoning, responsible AI use, and clear communication of data-driven results.
   </p>
 
   <ul>
-    <li>DATA 105: Experimental Design / Introductory Data Science</li>
-    <li>DATA 405: Advanced Data Analysis</li>
-    <li>Business Analytics and MSBA courses</li>
-    <li>Responsible AI and AI-assisted analytics topics</li>
+    <li>Introductory statistics and experimental design</li>
+    <li>Advanced data analysis with R</li>
+    <li>Regression, logistic regression, Bayesian analysis, and time series</li>
+    <li>Business analytics and responsible AI for analytics students</li>
+    <li>AI-supported learning tools for data science education</li>
   </ul>
 </section>
 
+<section id="personal">
+  <h2>Personal Notes, Photos, and Blog</h2>
+
+  <p>
+    This space can include personal and professional reflections, photos, blog posts, student stories, travel notes,
+    teaching reflections, or short essays about research and life as a faculty member.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Photos</h3>
+      <p>Add photos from conferences, lab meetings, student presentations, or campus events.</p>
+    </div>
+
+    <div class="card">
+      <h3>Blog Posts</h3>
+      <p>Add short posts about research ideas, teaching, responsible AI, statistics education, or academic life.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fun and Creative Work</h3>
+      <p>Add creative projects, children’s stories, data visualizations, or other interests you would like to share.</p>
+    </div>
+  </div>
+</section>
+
 <section id="join">
-  <h2>Join Us</h2>
+  <h2>Join the Lab</h2>
 
   <p>
-    Students interested in responsible AI, large language models, Bayesian modeling, human–AI interaction,
-    data science education, or computational cognitive modeling are welcome to contact me.
+    Students interested in responsible AI, large language models, Bayesian modeling, data science education,
+    human–AI interaction, multi-agent systems, or computational cognitive modeling are welcome to contact me.
   </p>
 
   <p>
-    Possible student projects include literature reviews, data collection, survey design, statistical analysis,
-    R/Python programming, AI evaluation, and conference paper preparation.
+    Possible student projects include literature reviews, survey design, behavioral experiments, data analysis,
+    R/Python programming, AI evaluation, visualization, poster preparation, and manuscript development.
   </p>
+
+  <div class="placeholder">
+    Add application instructions here. For example:
+    <br><br>
+    Please email me with your CV/resume, a short paragraph about your research interests, and any relevant coursework
+    or programming experience.
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
 
   <p>
-    <strong>Email:</strong> Add your Saint Mary’s email here<br>
-    <strong>Affiliation:</strong> Saint Mary’s College of California<br>
-    <strong>Office:</strong> Add office location here, if desired
+    <strong>Zahra Sajedinia</strong><br>
+    Assistant Professor of Data Science and Computer Science<br>
+    Saint Mary’s College of California
   </p>
 
   <p>
-    Optional links:
-    Google Scholar | GitHub | LinkedIn | Saint Mary’s faculty profile
+    <strong>Email:</strong> Add your preferred Saint Mary’s email here<br>
+    <strong>LinkedIn:</strong>
+    <a href="https://www.linkedin.com/in/zahra-sajedinia-47764923" target="_blank" rel="noopener">
+      linkedin.com/in/zahra-sajedinia-47764923
+    </a>
+  </p>
+
+  <p class="muted">
+    Optional links to add later: Google Scholar, ORCID, GitHub, CV, Saint Mary’s faculty profile, lab GitHub page,
+    publications page, and student project pages.
   </p>
 </section>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 Zahra Sajedinia. All rights reserved.</p>
+  <p>&copy; 2026 Zahra Sajedinia | Responsible AI and Data Science Lab</p>
+  <p>
+    <a href="#about">Back to top</a>
+  </p>
 </footer>
 
 </body>
